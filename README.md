@@ -141,15 +141,24 @@ Your kernel runs two test tasks:
 
 ## 📈 Roadmap — What’s Next?
 
-| Feature                    |   Status  |
-| -------------------------- | :-------: |
-| Paging / Virtual Memory    | ❌ Planned |
-| User‑Space Drivers & Shell | ❌ Planned |
-| System Call API            | ❌ Planned |
-| Virtual FS                 | ❌ Planned |
-| Real Hardware Support      | ❌ Planned |
-| SMP (Multi-Core Support)   | ❌ Planned |
-| ELF Binary Loader          | ❌ Planned |
+Boots successfully
+✅
+Multitasking support
+✅
+IPC between tasks
+✅
+Memory allocation
+✅
+Modular design
+✅
+Runs on QEMU
+✅
+Virtual memory / paging
+❌ (Planned/Optional)
+User-space processes
+❌ (Planned/Optional)
+System calls
+❌ (Planned/Optional)
 
 ---
 
