@@ -25,26 +25,30 @@ Runs perfectly in **QEMU** via `Makefile` or `run.sh` — extendable to real har
 
 MicroKernel-OS/
 ├── bootloader/
-│   └── boot.asm          ← Real-mode BIOS bootloader (0x7C00)
+│   └── boot.asm         # Real-mode BIOS bootloader (loads at 0x7C00)
+│
 ├── kernel/
-│   ├── include/          ← All public kernel headers
-│   │   ├── common.h
-│   │   ├── task.h
-│   │   ├── ipc.h
-│   │   ├── mm.h
-│   │   └── interrupts.h
-│   ├── start.S           ← Assembly entry point + CPU setup
-│   ├── main.c            ← Kernel init + test harness
-│   ├── task.c            ← Scheduler implementation (PIT interrupt)
-│   ├── ipc.c             ← Message-passing primitives
-│   └── mm.c              ← Physical memory pool allocator
-├── lib/                  ← Helper modules
-│   ├── string.c
-│   └── util.c            (inb/outb, etc.)
-├── Makefile              ← Build + run targets
-├── link.ld               ← 32-bit flat binary linker script
-├── run.sh                ← Shell convenience script to launch QEMU
-└── README.md
+│   ├── include/          # Public kernel headers
+│   │   ├── common.h      # Common macros, typedefs, and includes
+│   │   ├── task.h        # Task management and scheduling declarations
+│   │   ├── ipc.h         # Inter-process communication (IPC) interface
+│   │   ├── mm.h          # Memory management declarations
+│   │   └── interrupts.h  # Interrupt handling declarations
+│   │
+│   ├── start.S           # Assembly entry point; sets up CPU in protected mode
+│   ├── main.c            # Kernel initialization + test harness
+│   ├── task.c            # Scheduler implementation (uses PIT interrupt)
+│   ├── ipc.c             # Message-passing primitives for inter-task communication
+│   └── mm.c              # Physical memory pool allocator
+│
+├── lib/                  # Helper/utility modules
+│   ├── string.c          # String manipulation functions (strcpy, strlen, etc.)
+│   └── util.c            # Utility functions: inb(), outb(), io_wait(), etc.
+│
+├── Makefile              # Build system: compiles, links, and creates image
+├── link.ld               # Linker script for 32-bit flat binary
+├── run.sh                # Convenience script to launch OS in QEMU
+└── README.md             # Project overview and usage instructions
 
 ````
 
